@@ -16,7 +16,7 @@ const Hero = () => {
       <TypeAnimation
         sequence={[
           hero.role,
-          10000,
+          3000,
           hero.role2,
           2500,
           hero.role3,

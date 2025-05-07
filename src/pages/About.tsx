@@ -12,6 +12,7 @@ import {
   SiReactquery,
   SiReactrouter,
   SiStyledcomponents,
+  SiTypescript,
 } from "react-icons/si";
 import Profile from "../components/about/Profile";
 import TechStack from "../components/ui/TechStack";
@@ -79,6 +80,10 @@ const stack = [
     icon: <RiNextjsLine size={50} color="#fffff" />,
     label: "Next JS",
   },
+  {
+    icon: <SiTypescript size={50} color="#3178C6" />,
+    label: "TypeScript",
+  },
 ];
 
 export default function About() {
@@ -91,7 +96,12 @@ export default function About() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6 items-center gap-y-10 gap-x-5 justify-between">
           {stack.map((item) => (
-            <TechStack key={item.label} icon={item.icon} label={item.label} />
+            <TechStack
+              key={item.label}
+              variant="default"
+              icon={item.icon}
+              label={item.label}
+            />
           ))}
         </div>
       </section>
