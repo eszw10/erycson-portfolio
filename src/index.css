@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* fonts */
+  --font-roboto: "Roboto", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-dmSans: "DM Sans", sans-serif;
+
+  /* colors */
+  --color-primary: #5c62ec;
+  --color-primary-hover: #3c40ae;
+  --color-accent: #85bfd1;
+  --color-bordes: #26292d;
+  --color-rellenos: #1c1e22;
+  --color-gris: #a0a0a1;
+  --color-blanco: #ffffff;
+  --color-fondo: #171718;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--font-dmSans);
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  height: auto;
+  border-radius: 24px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-hover);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 24px;
+}
+
+/* navbar */
+
+a.active::after {
+  content: "";
+  display: block;
+  width: auto;
+  height: 3px;
+  background: var(--color-primary);
+  transition: width 0.25s ease-in-out;
+  border-radius: 10px;
+}
+
+.nav-desktop {
+  @apply items-center gap-8 text-sm;
+}
+
+.nav-mobile {
+  @apply flex-col gap-5 px-4 absolute top-[64px] bg-fondo min-w-screen justify-between py-5 text-base;
+}
+
+/* responsive-design */
+@media screen and (max-width: 768px) {
+  a.active {
+    background-color: var(--color-primary);
+    width: 95%;
+    border-radius: 5px;
+  }
+  a.active::after {
+    content: "";
+    display: none;
+  }
+}
+
+/* utility */
+
+@utility smooth {
+  @apply duration-150 ease-in;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-5 py-4 bg-primary rounded-lg hover:bg-primary-hover smooth font-dmSans font-medium text-center disabled:opacity-70 disabled:hover:bg-primary disabled:cursor-not-allowed;
+  }
+
+  .btn-line {
+    @apply px-5 py-4 bg-fondo rounded-lg border-2 border-blanco hover:border-primary smooth hover:text-primary font-dmSans font-medium disabled:opacity-70 disabled:cursor-not-allowed;
+  }
+}
+
+.smooth-hover {
+  @apply hover:text-primary smooth;
+}
+
+.nav-hover {
+  @apply cursor-pointer hover:text-accent smooth;
+}
+/* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
