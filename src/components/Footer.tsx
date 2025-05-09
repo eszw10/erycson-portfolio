@@ -32,7 +32,7 @@ const Footer = () => {
       id="contacts"
       className=" font-dm flex flex-col gap-16 pb-3 pt-16 border-t bordes-theme"
     >
-      <div className="2xl:px-0 lg:ps-10 flex flex-col lg:flex-row gap-8 items-center text-center lg:text-start lg:items-start lg:gap-32 px-4 xl:px-[142px]">
+      <div className="lg:ps-10 flex flex-col lg:flex-row gap-8 items-center text-center lg:text-start lg:items-start lg:gap-32 px-4 xl:px-[142px]">
         <p className="font-poppins font-semibold text-2xl">{nav.brand}</p>
         {footerNavigations.map((item) => (
           <FooterNavigation title={item.title} key={item.title}>
