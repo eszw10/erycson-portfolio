@@ -6,7 +6,7 @@ export default function NotFound() {
   const navigate = useNavigate();
   return (
     <div className="max-h-screen py-16 flex flex-col items-center">
-      <h1 className="text-3xl md:text-5xl font-bold">
+      <h1 className="text-3xl lg:text-5xl font-bold">
         <span className="text-primary">404</span> Page Not Found
       </h1>
       <img src="/images/notFound.svg" alt="not-found" className="h-96" />

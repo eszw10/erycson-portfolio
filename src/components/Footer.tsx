@@ -30,9 +30,9 @@ const Footer = () => {
   return (
     <footer
       id="contacts"
-      className="2xl:container 2xl:mx-auto font-dm flex flex-col gap-16 pb-3 pt-16 border-t border-bordes"
+      className=" font-dm flex flex-col gap-16 pb-3 pt-16 border-t bordes-theme"
     >
-      <div className="flex flex-col md:flex-row gap-8 items-center text-center md:text-start md:items-start md:gap-32 px-4 xl:px-[142px]">
+      <div className="2xl:px-0 lg:ps-10 flex flex-col lg:flex-row gap-8 items-center text-center lg:text-start lg:items-start lg:gap-32 px-4 xl:px-[142px]">
         <p className="font-poppins font-semibold text-2xl">{nav.brand}</p>
         {footerNavigations.map((item) => (
           <FooterNavigation title={item.title} key={item.title}>
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
         </FooterNavigation>
       </div>
-      <div className="py-5 border-t text-center border-bordes px-4 ">
+      <div className="py-5 border-t text-center bordes-theme px-4 ">
         <p className="text-sm">
           &#169; {new Date().getFullYear()} {footer.fullName}
         </p>

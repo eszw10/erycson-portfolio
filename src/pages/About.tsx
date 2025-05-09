@@ -88,13 +88,13 @@ const stack = [
 
 export default function About() {
   return (
-    <section className="p-5 pt-7 md:pt-0 flex flex-col pb-16 gap-16">
+    <section className="p-5 pt-7 lg:pt-0 flex flex-col pb-16 gap-16">
       <Profile />
       <section className="flex flex-col gap-16">
         <p className="xl:mb-2 font-medium xl:text-5xl text-2xl  text-center underline underline-offset-8 decoration-primary">
           Tech Stack
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6 items-center gap-y-10 gap-x-5 justify-between">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 items-center gap-y-10 gap-x-5 justify-between">
           {stack.map((item) => (
             <TechStack
               key={item.label}

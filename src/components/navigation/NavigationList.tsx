@@ -55,7 +55,7 @@ export default function NavigationList({
                 className={`${({ isActive }: { isActive: boolean }) =>
                   isActive
                     ? "active"
-                    : "nav-hover "} flex items-center gap-2 md:block p-2 md:px-0
+                    : "nav-hover "} flex items-center gap-2 lg:block p-2 lg:px-0
                   `}
               >
                 {!isDesktop && item.icon}

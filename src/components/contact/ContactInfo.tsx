@@ -31,9 +31,9 @@ const contacts = [
 
 export default function ContactInfo() {
   return (
-    <div className="md:flex-1/2">
+    <div className="lg:flex-1/2">
       <h3 className="text-2xl font-semibold">Contact Information</h3>
-      <p className="text-blanco/60 md:max-w-2xl max-w-sm mb-10">
+      <p className="text-blanco/60 dark:text-blanco-dark/60 lg:max-w-2xl max-w-sm mb-10">
         Have a project in mind or just want to chat? I'd love to hear from you!
         Use one of the the contact below to send me a message.
       </p>

@@ -14,7 +14,7 @@ export default function TechStack({
     <div
       className={
         variant === "default"
-          ? "bg-rellenos rounded-lg p-4 flex flex-col items-center gap-4 font-semibold tracking-widest"
+          ? "rellenos-theme rounded-lg p-4 flex flex-col items-center gap-4 font-semibold tracking-widest"
           : className
       }
     >

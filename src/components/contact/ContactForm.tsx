@@ -35,7 +35,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-bordes shadow-xl flex flex-col gap-4 rounded-lg p-8 w-full md:flex-1/2 h-[600px]"
+      className="border bordes-theme shadow-xl flex flex-col gap-4 rounded-lg p-8 w-full lg:flex-1/2 h-[600px]"
     >
       <p className="font-semibold text-2xl underline decoration-primary  underline-offset-8 mb-2">
         Send Me a Message
@@ -47,7 +47,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             placeholder="John Doe"
-            className="p-2 rounded-md border border-bordes"
+            className="p-2 rounded-md border bordes-theme"
             required
           />
         </div>
@@ -57,7 +57,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             placeholder="example@.com"
-            className="p-2 rounded-md border border-bordes"
+            className="p-2 rounded-md border bordes-theme"
             required
           />
         </div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
             name="subject"
             type="text"
             placeholder="Subject"
-            className="p-2 rounded-md border border-bordes"
+            className="p-2 rounded-md border bordes-theme"
             required
           />
         </div>
@@ -76,7 +76,7 @@ export default function ContactForm() {
           <textarea
             placeholder="Message"
             name="message"
-            className="p-2 rounded-md border border-bordes h-full resize-none"
+            className="p-2 rounded-md border bordes-theme h-full resize-none"
             rows={3}
             required
           ></textarea>

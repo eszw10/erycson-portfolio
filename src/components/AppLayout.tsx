@@ -23,7 +23,7 @@ export default function AppLayout() {
     };
   }, []);
   return (
-    <section className=" text-blanco relative">
+    <section className=" text-blanco dark:text-blanco-dark relative">
       <Navbar />
       <main className="max-w-7xl mx-auto">
         <Outlet />
@@ -33,9 +33,9 @@ export default function AppLayout() {
         href="#"
         className={`z-10 ${
           scrolled ? "fixed" : "hidden"
-        } animate-bounce px-2 py-2 rounded-lg border border-bordes bg-rellenos bottom-10 right-10 hover:border-primary hover:border-2 smooth `}
+        } animate-bounce group px-2 py-2 rounded-lg border border-theme rellenos-theme bottom-10 right-10 hover:border-primary hover:border-2 smooth `}
       >
-        <FaChevronUp className=" text-xl fa-solid fa-chevron-up" />
+        <FaChevronUp className=" text-xl fa-solid fa-chevron-up group-hover:text-primary smooth" />
       </a>
     </section>
   );

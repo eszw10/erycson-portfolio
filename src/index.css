@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* fonts */
   --font-roboto: "Roboto", sans-serif;
@@ -10,11 +12,16 @@
   --color-primary: #5c62ec;
   --color-primary-hover: #3c40ae;
   --color-accent: #85bfd1;
-  --color-bordes: #26292d;
-  --color-rellenos: #1c1e22;
-  --color-gris: #a0a0a1;
-  --color-blanco: #ffffff;
-  --color-fondo: #171718;
+  --color-bordes-dark: #26292d;
+  --color-bordes: #d1d5db;
+  --color-rellenos: #eeeeee;
+  --color-gris: #71717a;
+  --color-blanco: #171718;
+  --color-fondo: #faf9f6;
+  --color-rellenos-dark: #1c1e22;
+  --color-gris-dark: #a0a0a1;
+  --color-blanco-dark: #ffffff;
+  --color-fondo-dark: #171718;
 }
 
 * {
@@ -23,7 +30,12 @@
 }
 
 body {
+  &.dark {
+    background-color: var(--color-fondo-dark);
+    color: var(--color-blanco-dark);
+  }
   background-color: var(--color-fondo);
+  color: var(--color-blanco);
   font-family: var(--font-dmSans);
   position: relative;
 }
@@ -65,7 +77,7 @@ a.active::after {
 }
 
 .nav-mobile {
-  @apply flex-col gap-5 px-4 absolute top-[64px] bg-fondo min-w-screen justify-between py-5 text-base;
+  @apply flex-col gap-5 px-4 absolute left-0 top-[64px] fondo-theme min-w-screen justify-between py-5 text-base shadow-xl;
 }
 
 /* responsive-design */
@@ -74,6 +86,7 @@ a.active::after {
     background-color: var(--color-primary);
     width: 95%;
     border-radius: 5px;
+    color: var(--color-blanco-dark);
   }
   a.active::after {
     content: "";
@@ -87,21 +100,38 @@ a.active::after {
   @apply duration-150 ease-in;
 }
 
+@utility fondo-theme {
+  @apply bg-fondo dark:bg-fondo-dark;
+}
+
+@utility blanco-theme {
+  @apply text-blanco dark:text-blanco-dark;
+}
+
+@utility gris-theme {
+  @apply text-gris dark:text-gris-dark;
+}
+
+@utility rellenos-theme {
+  @apply bg-rellenos dark:bg-rellenos-dark;
+}
+
+@utility bordes-theme {
+  @apply border-bordes dark:border-bordes-dark;
+}
+
+/* component */
+
 @layer components {
   .btn-primary {
-    @apply px-5 py-4 bg-primary rounded-lg hover:bg-primary-hover smooth font-dmSans font-medium text-center disabled:opacity-70 disabled:hover:bg-primary disabled:cursor-not-allowed;
+    @apply px-5 py-4 bg-primary text-blanco-dark rounded-lg hover:bg-primary-hover smooth font-dmSans font-medium text-center disabled:opacity-70 disabled:hover:bg-primary disabled:cursor-not-allowed;
   }
 
   .btn-line {
-    @apply px-5 py-4 bg-fondo rounded-lg border-2 border-blanco hover:border-primary smooth hover:text-primary font-dmSans font-medium disabled:opacity-70 disabled:cursor-not-allowed;
+    @apply px-5 py-4 fondo-theme rounded-lg border-2 border-blanco dark:border-blanco-dark hover:border-primary smooth hover:text-primary font-dmSans font-medium disabled:opacity-70 disabled:cursor-not-allowed;
   }
 }
 
 .smooth-hover {
   @apply hover:text-primary smooth;
 }
-
-.nav-hover {
-  @apply cursor-pointer hover:text-accent smooth;
-}
-/* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */

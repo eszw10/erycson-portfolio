@@ -27,7 +27,6 @@ const Hero = () => {
         className="xl:text-6xl text-4xl font-bold"
         repeat={Infinity}
       />
-      {/* <p className="xl:text-6xl text-4xl font-bold">{hero.role}</p> */}
       <p className="sm:text-xl text-lg">{hero.message}</p>
       <div className="flex xl:flex-row flex-col xl:items-center gap-4 xl:gap-6">
         <Button variant="primary" className="flex items-center gap-2 group">

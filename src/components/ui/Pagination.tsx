@@ -30,7 +30,7 @@ export default function Pagination({
   return (
     <div className={className + " flex items-center gap-4"}>
       <button
-        className="p-1 rounded bg-rellenos hover:bg-primary cursor-pointer disabled:bg-bordes disabled:opacity-30"
+        className="p-1 smooth rounded rellenos-theme hover:bg-primary hover:text-blanco-dark cursor-pointer disabled:bordes-theme disabled:opacity-30"
         onClick={prev}
         disabled={params === 1}
       >
@@ -43,14 +43,14 @@ export default function Pagination({
             key={i + 1}
             value={i + 1}
             disabled={i + 1 === params}
-            className={`w-7 h-7 rounded cursor-pointer bg-rellenos disabled:bg-primary `}
+            className={`w-7 h-7 rounded cursor-pointer rellenos-theme disabled:bg-primary disabled:text-blanco-dark `}
           >
             {i + 1}
           </button>
         ))}
       </div>
       <button
-        className="p-1 rounded bg-rellenos hover:bg-primary cursor-pointer disabled:bg-bordes disabled:opacity-30"
+        className="p-1 smooth rounded rellenos-theme hover:bg-primary hover:text-blanco-dark cursor-pointer disabled:border-theme disabled:opacity-30"
         onClick={next}
         disabled={params === length}
       >

@@ -22,7 +22,7 @@ export default function Project() {
     techStacks,
   } = projects.find((project) => project.id === projectId)!;
   return (
-    <section className="py-16 flex flex-col md:flex-row  gap-16 p-5 relative">
+    <section className="py-16 flex flex-col lg:flex-row  gap-16 p-5 relative">
       <div className="my-auto ">
         <img
           src={image}
@@ -30,7 +30,7 @@ export default function Project() {
           className=" w-full rounded-xl object-cover"
         />
       </div>
-      <div className="flex flex-col gap-8 md:max-w-1/2 text-justify">
+      <div className="flex flex-col gap-8 lg:max-w-1/2 text-justify">
         <h1 className="text-4xl font-semibold underline underline-offset-8 decoration-primary">
           {title}
         </h1>
@@ -43,7 +43,7 @@ export default function Project() {
               key={stack}
               label={stack}
               variant="custom"
-              className="bg-rellenos px-3 p-2 rounded-4xl tracking-normal"
+              className="rellenos-theme px-3 p-2 rounded-4xl tracking-normal"
             />
           ))}
         </div>
@@ -51,7 +51,7 @@ export default function Project() {
           <Button
             to="/projects"
             variant="secondary"
-            className="flex items-center gap-1 px-3 py-2 bg-neutral-700/20 hover:text-blanco hover:bg-primary/90 rounded-4xl border-[1px] border-bordes text-sm shadow-2xl"
+            className="flex items-center gap-1 px-3 py-2 bg-neutral-700/20 hover:text-blanco-dark hover:bg-primary/90 rounded-4xl border-[1px] bordes-theme text-sm shadow-2xl"
           >
             <FaAngleLeft className="smooth group-hover:-translate-x-1" />
             <span>Back</span>

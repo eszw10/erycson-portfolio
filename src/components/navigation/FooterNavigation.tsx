@@ -7,7 +7,9 @@ export default function FooterNavigation({
 }>) {
   return (
     <div className="flex flex-col gap-5 xl:gap-6">
-      <p className="text-accent font-medium">{title}</p>
+      <p className="dark:text-accent text-blanco font-semibold text-lg">
+        {title}
+      </p>
       {children}
     </div>
   );

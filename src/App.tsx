@@ -6,6 +6,7 @@ import AppLayout from "./components/AppLayout";
 import ScrollTopWrapper from "./components/ScrollTopWrapper";
 import ErrorPage from "./pages/ErrorPage";
 import NotFound from "./pages/NotFound";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -18,17 +19,19 @@ export default function App() {
     {
       element: (
         <ScrollTopWrapper>
-          <Toaster
-            toastOptions={{
-              style: {
-                color: "var(--color-blanco)",
-                background: "var(--color-bordes)",
-              },
-              success: { duration: 3000 },
-              error: { duration: 5000 },
-            }}
-          />
-          <AppLayout />
+          <DarkModeProvider>
+            <Toaster
+              toastOptions={{
+                style: {
+                  color: "var(--color-blanco)",
+                  background: "var(--color-bordes)",
+                },
+                success: { duration: 3000 },
+                error: { duration: 5000 },
+              }}
+            />
+            <AppLayout />
+          </DarkModeProvider>
         </ScrollTopWrapper>
       ),
       errorElement: <ErrorPage />,

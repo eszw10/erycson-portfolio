@@ -8,9 +8,9 @@ export const projects = [
     desc: "Welcome to my web portfolio! This site is my personal space to showcase the projects I'm passionate about, the technologies I've explored and learned, how you can get in touch, and a little bit about me. It's a hands-on demonstration of my skills and understanding within my growing tech stack. ",
     info: "Crafted with React and react-router-dom for easy browsing, the site's styling is powered by Tailwind CSS. To enhance the visual appeal and user interaction, I've integrated react-icons, react-hot-toast for contact notifications, and react-type-animation for dynamic text. The contact form is seamlessly handled by Web3Forms.",
     gitLink: "https://github.com/eszw10/erycson-portfolio",
-    demo: "https://eszw10.github.io/my-portfolio/",
+    demo: "https://erycson-portfolio.vercel.app/",
     codeShown: true,
-    demoShown: false,
+    demoShown: true,
     techStacks: ["React", "TypeScript", "Tailwind CSS"],
   },
   {

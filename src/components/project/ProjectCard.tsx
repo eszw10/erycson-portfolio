@@ -14,11 +14,11 @@ const ProjectCard = ({ data }: CardProps) => {
   const description = `${data.desc.split(" ").slice(0, 20).join(" ")}...`;
 
   return (
-    <div className="bg-rellenos border-bordes h-[400px] border rounded-3xl flex flex-col px-2 pt-2 pb-4 gap-4  hover:shadow-emerge md:hover:scale-105 cursor-pointer smooth">
+    <div className="rellenos-theme bordes-theme h-[400px] border rounded-3xl flex flex-col px-2 pt-2 pb-4 gap-4  hover:shadow-emerge lg:hover:scale-105 cursor-pointer smooth">
       <img
         src={data.image}
         alt=""
-        className="h-[80%] rounded-3xl object-cover "
+        className="h-[80%] md:h-[60%] rounded-3xl object-cover "
       />
       <div className="px-4">
         <div className="font-poppins flex flex-col">
@@ -52,7 +52,7 @@ const ProjectCard = ({ data }: CardProps) => {
             <Button
               to={`/projects/${data.id}`}
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-2 bg-neutral-700/20 hover:text-blanco hover:bg-primary/90 rounded-4xl border-[1px] border-bordes text-sm shadow-2xl"
+              className="flex items-center gap-1 px-3 py-2 bg-neutral-700/20 hover:text-blanco-dark hover:bg-primary/90 rounded-4xl border-[1px] bordes-theme text-sm shadow-2xl"
             >
               <span>Details</span>
               <FaAngleRight className="smooth group-hover:translate-x-1" />
