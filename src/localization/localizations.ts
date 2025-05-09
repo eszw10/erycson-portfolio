@@ -34,6 +34,21 @@ export const localizations = {
   card: {
     code: "Code",
     demo: "Live Demo",
+    detail: "Details",
+  },
+  contact: {
+    form: {
+      title: "Send Me a Message",
+      name: "Name",
+      email: "Email",
+      subject: "Subject",
+      message: "Message",
+    },
+    info: {
+      title: "Contact Information",
+      subtitle:
+        " Have a project in mind or just want to chat? I'd love to hear from you! Use one of the the contact below to send me a message.",
+    },
   },
   footer: {
     aboutMe: "About Me",

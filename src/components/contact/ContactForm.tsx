@@ -3,9 +3,11 @@ import toast from "react-hot-toast";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
 import SpinnerMini from "../ui/SpinnerMini";
+import { localizations } from "../../localization/localizations";
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const { title, name, email, subject, message } = localizations.contact.form;
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
@@ -38,11 +40,11 @@ export default function ContactForm() {
       className="border bordes-theme shadow-xl flex flex-col gap-4 rounded-lg p-8 w-full lg:flex-1/2 h-[600px]"
     >
       <p className="font-semibold text-2xl underline decoration-primary  underline-offset-8 mb-2">
-        Send Me a Message
+        {title}
       </p>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">{name}</label>
           <input
             name="name"
             type="text"
@@ -52,7 +54,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{email}</label>
           <input
             name="email"
             type="email"
@@ -62,7 +64,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">{subject}</label>
           <input
             name="subject"
             type="text"
@@ -72,7 +74,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">{message}</label>
           <textarea
             placeholder="Message"
             name="message"

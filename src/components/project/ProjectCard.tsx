@@ -10,7 +10,7 @@ type CardProps = {
 };
 
 const ProjectCard = ({ data }: CardProps) => {
-  const { card } = localizations;
+  const { code, demo, detail } = localizations.card;
   const description = `${data.desc.split(" ").slice(0, 20).join(" ")}...`;
 
   return (
@@ -34,7 +34,7 @@ const ProjectCard = ({ data }: CardProps) => {
                   className="flex gap-2 items-center hover:text-primary smooth group"
                 >
                   <FaGithub className="group-hover:scale-[110%] " />
-                  <p>{card.code}</p>
+                  <p>{code}</p>
                 </Link>
               )}
               {data.demoShown && (
@@ -45,7 +45,7 @@ const ProjectCard = ({ data }: CardProps) => {
                   className="flex gap-2 items-center hover:text-primary smooth group"
                 >
                   <FaArrowUpRightFromSquare className="group-hover:scale-[110%] " />
-                  <p>{card.demo}</p>
+                  <p>{demo}</p>
                 </Link>
               )}
             </div>
@@ -54,7 +54,7 @@ const ProjectCard = ({ data }: CardProps) => {
               variant="secondary"
               className="flex items-center gap-1 px-3 py-2 bg-neutral-700/20 hover:text-blanco-dark hover:bg-primary/90 rounded-4xl border-[1px] bordes-theme text-sm shadow-2xl"
             >
-              <span>Details</span>
+              <span>{detail}</span>
               <FaAngleRight className="smooth group-hover:translate-x-1" />
             </Button>
           </div>
