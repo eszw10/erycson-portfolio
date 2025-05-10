@@ -1,7 +1,6 @@
-import React, { use } from "react";
 import { Link } from "react-router-dom";
-import { localizations } from "../../localization/localizations";
 import { useDarkMode } from "../../context/DarkModeContext";
+import { localizations } from "../../localization/localizations";
 
 export default function Logo() {
   const { isDarkMode } = useDarkMode();
