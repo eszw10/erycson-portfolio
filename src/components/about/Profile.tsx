@@ -21,7 +21,7 @@ const Profile = () => {
         <Button
           variant="secondary"
           target="_blank"
-          to="https://www.linkedin.com/in/erycson-zulkarnain-wijaya-a01a75169/"
+          to="https://www.linkedin.com/in/erycson-zulkarnain-wijaya/"
           rel="noreferrer"
           className="flex items-center gap-2 self-start xl:mt-10"
         >

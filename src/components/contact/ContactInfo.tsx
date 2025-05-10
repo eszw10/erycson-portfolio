@@ -20,7 +20,7 @@ const contacts = [
     title: "Linkedin",
     label: "linkedin.com/in/erycson-zulkarnain-wijaya",
     icon: <FaLinkedin size={24} />,
-    link: "https://www.linkedin.com/in/erycson-zulkarnain-wijaya-a01a75169/",
+    link: "https://www.linkedin.com/in/erycson-zulkarnain-wijaya/",
   },
   {
     title: "Github",

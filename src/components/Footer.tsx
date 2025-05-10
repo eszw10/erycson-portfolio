@@ -21,7 +21,7 @@ const Footer = () => {
       },
       {
         label: <FaLinkedin />,
-        link: "https://www.linkedin.com/in/erycson-zulkarnain-wijaya-a01a75169/",
+        link: "https://www.linkedin.com/in/erycson-zulkarnain-wijaya/",
       },
     ],
   };
