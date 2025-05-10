@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useMemo } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
 import { useLocalStorage } from "../hooks";
 
 type DarkModeContextProps = {
@@ -18,9 +24,9 @@ function DarkModeProvider({ children }: Readonly<DarkModeContextProps>) {
     "darkMode"
   );
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = useCallback(() => {
     setIsDarkMode(!isDarkMode);
-  };
+  }, [isDarkMode, setIsDarkMode]);
 
   useEffect(() => {
     if (isDarkMode) {
