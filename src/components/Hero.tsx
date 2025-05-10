@@ -35,8 +35,8 @@ const Hero = () => {
         </Button>
         <Button variant="secondary">
           <a
-            href="/resume.pdf"
-            download="resume.pdf"
+            href="/cv.pdf"
+            download="cv.pdf"
             target="_self"
             className="flex gap-2 items-center cursor-pointer group"
           >
