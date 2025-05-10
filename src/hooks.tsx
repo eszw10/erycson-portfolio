@@ -24,10 +24,13 @@ export const useWindowSize = () => {
   return windowSize;
 };
 
-export const useLocalStorage = <T,>(initialValue: T, key: string) => {
+export function useLocalStorage<T>(
+  initialValue: T,
+  key: string
+): [T, (value: T) => void] {
   const [value, setValue] = useState<T>(() => {
     const storedValue = localStorage.getItem(key);
-    return storedValue ? (JSON.parse(storedValue) as T) : initialValue;
+    return storedValue ? JSON.parse(storedValue) : initialValue;
   });
 
   useEffect(() => {
@@ -35,4 +38,4 @@ export const useLocalStorage = <T,>(initialValue: T, key: string) => {
   }, [value, key]);
 
   return [value, setValue];
-};
+}

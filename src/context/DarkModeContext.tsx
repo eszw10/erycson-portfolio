@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { useLocalStorage } from "../hooks";
 
 type DarkModeContextProps = {
   children: React.ReactNode;
@@ -6,28 +7,20 @@ type DarkModeContextProps = {
 
 type DarkModeContextType = {
   isDarkMode: boolean;
-  toggleDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleDarkMode: () => void;
 };
 
 const DarkModeContext = createContext<DarkModeContextType | null>(null);
 
 function DarkModeProvider({ children }: Readonly<DarkModeContextProps>) {
-  const [isDarkMode, setIsDarkMode] = useState<DarkModeContextType>(
-    function () {
-      const storedValue = localStorage.getItem("darkMode");
-      return storedValue
-        ? JSON.parse(storedValue)
-        : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
+  const [isDarkMode, setIsDarkMode] = useLocalStorage<boolean>(
+    window.matchMedia("(prefers-color-scheme: dark)").matches,
+    "darkMode"
   );
 
   const toggleDarkMode = () => {
-    setIsDarkMode((isDarkMode) => !isDarkMode);
+    setIsDarkMode(!isDarkMode);
   };
-
-  useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -39,7 +32,10 @@ function DarkModeProvider({ children }: Readonly<DarkModeContextProps>) {
 
   return (
     <DarkModeContext.Provider
-      value={useMemo(() => ({ isDarkMode, toggleDarkMode }), [isDarkMode]!)}
+      value={useMemo(
+        () => ({ isDarkMode, toggleDarkMode }),
+        [isDarkMode, toggleDarkMode]
+      )}
     >
       {children}
     </DarkModeContext.Provider>
@@ -48,7 +44,7 @@ function DarkModeProvider({ children }: Readonly<DarkModeContextProps>) {
 
 function useDarkMode() {
   const context = useContext(DarkModeContext);
-  if (context === undefined) {
+  if (context === null) {
     throw new Error("useDarkMode must be used within a DarkModeProvider");
   }
   return context;
